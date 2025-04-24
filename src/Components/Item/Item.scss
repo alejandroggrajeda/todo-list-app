@@ -1,0 +1,15 @@
+$secondary: #a5ff3d;
+
+.card {
+background-color: #fff;
+  color: #333333;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: none;
+  transition: ease 0.3s;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
+

@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.scss';
+import Item from './Components/Item/Item.js';
+import Menu from './Components/Menu/Menu.js';
+import TodoEntry from "./Components/Form/form.js";
+import Container from "react-bootstrap/Container";
+import {Col, Row} from "react-bootstrap";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Menu></Menu>
+            <Container>
+                <Row>
+                    <Col xs={12} md={6} className="todo-entry"><TodoEntry></TodoEntry></Col>
+                    <Col xs={12} md={6} className="item-col">
+                        <Item></Item>
+                        <Item></Item>
+                        <Item></Item>
+                        <Item></Item>
+                        <Item></Item>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
+    );
 }
 
 export default App;
