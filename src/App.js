@@ -9,6 +9,7 @@ function App() {
     return (
         <div className="App">
             <Menu></Menu>
+            <h1>ToDo List</h1>
             <Container>
                 <Row>
                     <Col xs={12} md={6} className="todo-entry"><TodoEntry></TodoEntry></Col>

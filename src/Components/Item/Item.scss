@@ -3,7 +3,7 @@ $secondary: #a5ff3d;
 .card {
 background-color: #fff;
   color: #333333;
-  margin-top: 50px;
+  margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border: none;
   transition: ease 0.3s;
@@ -13,3 +13,10 @@ background-color: #fff;
   }
 }
 
+.card:first-of-type {
+  margin-top: 30px;
+}
+
+.card:last-of-type {
+  margin-bottom: 30px;
+}
