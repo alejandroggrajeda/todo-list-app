@@ -1,10 +1,11 @@
 $secondary: #a5ff3d;
 
 .card {
-background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
   color: #333333;
   margin-top: 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: none;
   transition: ease 0.3s;
 
