@@ -2,19 +2,22 @@ import Card from 'react-bootstrap/Card';
 import "./Item.scss"
 import {Button} from "react-bootstrap";
 
-function Item() {
+
+export const Item = (props) => {
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </Card.Text>
-                 <Button variant="primary">Go somewhere</Button>
+        <Card style={{ width: '23rem' }}>
+            <Card.Body className='item-body'>
+                <Card.Title>{props.name}</Card.Title>
+                <Card.Subtitle className="subtitle">Description</Card.Subtitle>
+                <Card.Text>{props.description}</Card.Text>
+                <Card.Subtitle className="subtitle">Due Date</Card.Subtitle>
+                <Card.Text>{props.dueDate}</Card.Text>
             </Card.Body>
+            <div className='buttons-container'>
+                <Button className='item-button' variant="primary">Edit</Button>
+                <Button className='item-button' variant="primary">Delete</Button>
+            </div>
         </Card>
     );
 }
 
-export default Item;

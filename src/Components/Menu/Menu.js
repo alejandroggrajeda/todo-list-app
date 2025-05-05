@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./Menu.scss"
 
-function Menu() {
+export const Menu = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
@@ -31,5 +31,3 @@ function Menu() {
         </Navbar>
     );
 }
-
-export default Menu;

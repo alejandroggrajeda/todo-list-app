@@ -1,27 +1,29 @@
 import "./App.scss";
-import Item from "./Components/Item/Item.js";
-import Menu from "./Components/Menu/Menu.js";
-import TodoEntry from "./Components/Form/form.js";
+import { Menu, FormTasksAndGoal, Item } from "./Components";
 import Container from "react-bootstrap/Container";
 import { Col, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 function App() {
+  const todos = useSelector((state) => state.todos.value);
+
   return (
     <div className="App">
       <Menu></Menu>
       <h1 className="main-title">ToDo List</h1>
       <Container>
-        <Row>
+        <Row> 
+
           <Col xs={12} md={6} className="todo-entry">
-            <TodoEntry></TodoEntry>
+            <FormTasksAndGoal></FormTasksAndGoal>
           </Col>
+          
           <Col xs={12} md={6} className="item-col">
-            <Item></Item>
-            <Item></Item>
-            <Item></Item>
-            <Item></Item>
-            <Item></Item>
-          </Col>
+           {todos.map((todos, index) => {
+            return <Item key={index} {...todos}></Item>
+           })}
+          </Col>~
+
         </Row>
       </Container>
     </div>
