@@ -15,6 +15,9 @@ export const goalSlice = createSlice({
     addGoal: (state, action) => {
       state.value.push(action.payload);
     },
+    removeGoal: (state, action) => {
+      state.value.splice(action.payload, 1);
+    },
   },
 });
 

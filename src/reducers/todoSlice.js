@@ -16,6 +16,9 @@ export const todoSlice = createSlice({
     addTodo: (state, action) => {
       state.value.push(action.payload);
     },
+    removeTodo: (state, action) => {
+      state.value.splice(action.payload, 1);
+    },
   },
 });
 
