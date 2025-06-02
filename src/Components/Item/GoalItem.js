@@ -2,17 +2,17 @@ import React from 'react';
 import Card from "react-bootstrap/Card";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { removeTodoAsync } from "../../reducers/todoSlice";
+import { removeGoalAsync } from "../../reducers/goalsSlice"; // Cambia esto
 import "./Item.scss";
 
-export const Item = (props) => {
+export const GoalItem = (props) => { 
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
     try {
-      await dispatch(removeTodoAsync(props.id)).unwrap();
+      await dispatch(removeGoalAsync(props.id)).unwrap();
     } catch (error) {
-      alert("Error deleting task: " + error.message);
+      alert("Error deleting goal: " + error);
     }
   };
 

@@ -1,11 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./FormTasksAndGoal.scss";
-import { addTodoAsync } from "../../reducers/todoSlice";
+import { addGoalAsync } from "../../reducers/goalsSlice";
 import { useDispatch } from "react-redux";
 import { useRef } from "react";
 
-export const FormTasksAndGoal = () => {
+export const FormGoals = () => {
   const inputRefName = useRef();
   const inputRefDescription = useRef();
   const inputRefDueDate = useRef();
@@ -13,7 +13,7 @@ export const FormTasksAndGoal = () => {
 
   const dispatch = useDispatch();
 
-  const addItem = async (e) => {
+  const addGoal = async (e) => {
     e.preventDefault();
 
     const name = inputRefName.current.value.trim();
@@ -21,31 +21,31 @@ export const FormTasksAndGoal = () => {
     const dueDate = inputRefDueDate.current.value;
 
     if (!name || !description || !dueDate) {
-      alert("Por favor completa todos los campos antes de agregar la tarea.");
+      alert("Please complete all fields before adding the goal.");
       return;
     }
 
-    const newTodo = {
+    const newGoal = {
       name: name,
       description: description,
       dueDate: dueDate,
     };
 
     try {
-      await dispatch(addTodoAsync(newTodo)).unwrap();
+      await dispatch(addGoalAsync(newGoal)).unwrap();
       formRef.current.reset();
     } catch (error) {
-      alert("Error adding task: " + error.message);
+      alert("Error adding goal: " + error.message);
     }
   };
 
   return (
     <Form ref={formRef}>
       <Form.Group className="form-group mb-3" controlId="formBasicText">
-        <Form.Label>Task Name</Form.Label>
+        <Form.Label>Goal Name</Form.Label>
         <Form.Control
           type="text"
-          placeholder="Enter your task"
+          placeholder="Enter your goal"
           ref={inputRefName}
         />
       </Form.Group>
@@ -55,7 +55,7 @@ export const FormTasksAndGoal = () => {
         <Form.Control
           as="textarea"
           rows={3}
-          placeholder="Enter your task description"
+          placeholder="Enter your goal description"
           ref={inputRefDescription}
         />
       </Form.Group>
@@ -72,9 +72,9 @@ export const FormTasksAndGoal = () => {
         className="add-task-button"
         variant="primary"
         type="submit"
-        onClick={addItem}
+        onClick={addGoal}
       >
-        Add Task
+        Add Goal
       </Button>
     </Form>
   );
